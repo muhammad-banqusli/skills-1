@@ -35,7 +35,11 @@ const SlideUpBtn = () => {
     }, []);
 
     return (
-        <div className={`fixed right-5 bottom-5 md:right-10  bg-gradient-to-tr from-[#9cfcf8] to-[#6e7bfb] flex rounded-full animate-bounce z-50 transition-all duration-500 ${visible? "bottom-5 md:bottom-10": "-bottom-20"}`}>
+        <div
+            className={`fixed right-5 bottom-5 md:right-10  bg-gradient-to-tr from-[#9cfcf8] to-[#6e7bfb] flex rounded-full animate-bounce z-50 transition-all duration-500 ${
+                visible ? "bottom-5 md:bottom-10" : "-bottom-20"
+            }`}
+        >
             <button
                 onClick={scrollToTop}
                 style={{
