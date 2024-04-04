@@ -34,21 +34,20 @@ const SlideUpBtn = () => {
         return () => window.removeEventListener("scroll", toggleVisible);
     }, []);
 
-    if (visible)
-        return (
-            <div className="fixed right-5 bottom-5 md:right-10 md:bottom-10 bg-gradient-to-tr from-[#9cfcf8] to-[#6e7bfb] flex rounded-full animate-bounce">
-                <button
-                    onClick={scrollToTop}
-                    style={{
-                        background: `conic-gradient( transparent ${progress}%,  whitesmoke ${progress}%)`,
-                    }}
-                    className="rounded-full m-0 p-[2px]"
-                >
-                    <div className=" bg-whitesmoke rounded-full p-2">
-                        <img className="h-4 w-4" src={arrow} alt="slid up" />
-                    </div>
-                </button>
-            </div>
-        );
+    return (
+        <div className={`fixed right-5 bottom-5 md:right-10  bg-gradient-to-tr from-[#9cfcf8] to-[#6e7bfb] flex rounded-full animate-bounce z-50 transition-all duration-500 ${visible? "bottom-5 md:bottom-10": "-bottom-20"}`}>
+            <button
+                onClick={scrollToTop}
+                style={{
+                    background: `conic-gradient( transparent ${progress}%,  whitesmoke ${progress}%)`,
+                }}
+                className="rounded-full m-0 p-[2px]"
+            >
+                <div className=" bg-whitesmoke rounded-full p-2">
+                    <img className="h-4 w-4" src={arrow} alt="slide up" />
+                </div>
+            </button>
+        </div>
+    );
 };
 export default SlideUpBtn;
