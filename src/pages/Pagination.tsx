@@ -21,7 +21,7 @@ const Pagination = () => {
     }, [page]);
     return (
         <Section title="Pagination & Modal" paragraph="" id="pagination">
-                <div className="container grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-0.5 px-4">
+                <div className="container grid grid-cols-3 sm:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10 gap-0.5 px-10">
                     {images &&
                         images.photos.map((image) => (
                             <PaginationImage key={image.id} image={image} />

@@ -6,7 +6,15 @@ const useClickOutside = (
 ) => {
     useEffect(() => {
         function listener(event: MouseEvent | TouchEvent) {
-            if (!ref.current || ref.current.contains(event.target as Node)) {
+            const toggleSidebar = document.getElementById("toggle-sidebar")
+            const toggleSidebarButton = document.getElementById("toggle-sidebar-button")
+           
+            if (
+                !ref.current ||
+                ref.current.contains(event.target as Node) ||
+                toggleSidebar && toggleSidebar === event.target ||
+                toggleSidebarButton && toggleSidebarButton === event.target
+            ) {
                 return;
             }
 
