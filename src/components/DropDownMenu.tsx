@@ -54,7 +54,7 @@ const DropDownMenu = () => {
             <div
                 className={` absolute top-10 rounded-md bg-whitesmoke w-full flex-col border-2 drop-shadow-lg  overflow-hidden ${
                     menuOpen ? "flex " : "hidden"
-                }  animate-fadeIn`}
+                }  animate-fadeIn z-50`}
             >
                 {list.map((item, i) => (
                     <a
