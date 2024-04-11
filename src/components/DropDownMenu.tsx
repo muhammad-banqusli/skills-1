@@ -38,7 +38,7 @@ const DropDownMenu = () => {
     return (
         <div className="relative" ref={ref}>
             <button
-                className="border-2 px-2 py-1.5 rounded-md text-sm flex items-center gap-3"
+                className="border-2 px-4 py-1.5 rounded-md text-sm flex items-center gap-8"
                 onClick={toggleMenu}
             >
                 Select Section
@@ -52,7 +52,7 @@ const DropDownMenu = () => {
             </button>
             <div className={`${menuOpen ? "flex " : "hidden invisible"}`}>
                 <div
-                    className={`absolute top-10 rounded-md bg-whitesmoke w-full flex-col border-2 drop-shadow-lg animate-fadeIn`}
+                    className={`absolute top-10 rounded-md bg-whitesmoke w-full flex-col border-2 drop-shadow-lg animate-fadeIn duration-500`}
                 >
                     {list.map((item, i) => (
                         <a

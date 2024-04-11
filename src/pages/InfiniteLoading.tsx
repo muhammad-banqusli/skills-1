@@ -80,7 +80,7 @@ const InfiniteLoading = () => {
                         return <InfiniteLoadingImage key={i} image={image} />;
                     })}
             </div>
-            {isLoading && <Loading />}
+            {isLoading && <div className="grow flex items-center py-8"><Loading /></div>}
             {!isLoading && hasNextPage && infiniteType === "BUTTON" && (
                 <button
                     disabled={!hasNextPage}
