@@ -34,11 +34,11 @@ const InfiniteLoadingImage = forwardRef(
         );
 
         const content = ref ? (
-            <article className="hover:z-10" ref={ref}>
+            <article className="hover:z-50" ref={ref}>
                 {ImageBody}
             </article>
         ) : (
-            <article className="hover:z-10">{ImageBody}</article>
+            <article className="hover:z-50">{ImageBody}</article>
         );
 
         return content;
