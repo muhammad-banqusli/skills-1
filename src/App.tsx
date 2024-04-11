@@ -16,7 +16,7 @@ function App() {
     return (
         <div className="flex flex-col items-center">
             <Header sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-            <Sidebar open={sidebarOpen} />
+            <Sidebar open={sidebarOpen} setSidebarOpen={setSidebarOpen}/>
             <main className="w-full max-w-[1400px] shadow-2xl">
                 <Hero />
                 <SearchFilter />

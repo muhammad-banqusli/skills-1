@@ -1,23 +1,42 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import upArrow from "../assets/up-arrow-svgrepo-com.svg";
+import useClickOutside from "../hooks/useClickOutside";
 
 const DropDownMenu = () => {
     const [menuOpen, setMenuOpen] = useState<boolean>(false);
-
+    const ref = useRef(null)
     const toggleMenu = () => setMenuOpen((prev) => !prev);
+    useClickOutside(ref, () => setMenuOpen(false))
     const list = [
         {
-            target: "hero",
-            targetName: "Start",
+            title: "Hero",
+            desination: "#hero",
         },
         {
-            target: "hero",
-            targetName: "end",
+            title: "Search Filter & Skeleton",
+            desination: "#search-filter",
+        },
+
+        {
+            title: "Pagination & Modal",
+            desination: "#pagination",
+        },
+        {
+            title: "Drag & Drop",
+            desination: "#drag-and-drop",
+        },
+        {
+            title: "Kanban",
+            desination: "#kanban",
+        },
+        {
+            title: "Infinite Loading",
+            desination: "#infinite",
         },
     ];
 
     return (
-        <div className="relative">
+        <div className="relative" ref={ref}>
             <button
                 className="border-2 px-2 py-1.5 rounded-md text-sm flex items-center gap-3"
                 onClick={toggleMenu}
@@ -32,18 +51,21 @@ const DropDownMenu = () => {
                 />
             </button>
             <div className={`${menuOpen ? "flex " : "hidden invisible"}`}>
-                <ul
-                    className={`absolute top-10 px-2 rounded-md bg-whitesmoke w-full flex-col border-2 drop-shadow-lg animate-fadeIn`}
+                <div
+                    className={`absolute top-10 rounded-md bg-whitesmoke w-full flex-col border-2 drop-shadow-lg animate-fadeIn`}
                 >
                     {list.map((item, i) => (
-                        <li
-                            className="border-b py-1.5 last:border-none text-sm"
+                        <a
+                            className="border-b px-2 py-1.5 last:border-none text-sm hover:bg-gray-200 transition-all block"
                             key={i}
+                            onClick={toggleMenu}
+                            href={`${item.desination}`}
                         >
-                            <a href={`#${item.target}`}>{item.targetName}</a>
-                        </li>
+                            {item.title}
+                            
+                        </a>
                     ))}
-                </ul>
+                </div>
             </div>
         </div>
     );

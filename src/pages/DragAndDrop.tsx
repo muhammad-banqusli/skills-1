@@ -19,6 +19,7 @@ import {
     useSensor,
     useSensors,
 } from "@dnd-kit/core";
+import { Loading, Section } from "../components";
 
 const DragAndDrop = () => {
     const [loading, setLoading] = useState(false);
@@ -77,12 +78,16 @@ const DragAndDrop = () => {
 
     let content;
 
-    if (loading) content = <p>Loading...</p>;
+    if (loading)
+        content = (
+            <div className="flex grow h-full justify-center items-center">
+                <Loading />
+            </div>
+        );
     else if (error) content = <p>Something went wrong while fetching data</p>;
     else
         content = (
-            <>
-                
+            <div className="container grid lg:grid-rows-8 gap-1 lg:grid-flow-col">
                 {!!countries.length &&
                     countries.map((country) => (
                         <SmallCountryCard
@@ -91,7 +96,7 @@ const DragAndDrop = () => {
                             key={country.id}
                         />
                     ))}
-            </>
+            </div>
         );
 
     return (
@@ -100,18 +105,18 @@ const DragAndDrop = () => {
             collisionDetection={closestCorners}
             sensors={sensors}
         >
-            <section className="section-min-height flex flex-col items-center gap-5 pt-8">
-                <h2 className="text-xl font-titles">Drag and Drop</h2>
-                <p className="text-center text-sm md:text-lg mb-3">Sort the Countries Using Drag and Drop</p>
-                <div className="container grid lg:grid-rows-8 gap-1 lg:grid-flow-col">
-                    <SortableContext
-                        items={countries}
-                        strategy={rectSwappingStrategy}
-                    >
-                        {content}
-                    </SortableContext>
-                </div>
-            </section>
+            <Section
+                title="Drag and Drop"
+                paragraph="Sort the Countries Using Drag and Drop"
+                id="drag-and-drop"
+            >
+                <SortableContext
+                    items={countries}
+                    strategy={rectSwappingStrategy}
+                >
+                    {content}
+                </SortableContext>
+            </Section>
         </DndContext>
     );
 };

@@ -18,11 +18,6 @@ const Header = ({ sidebarOpen, setSidebarOpen }: PropTypes) => {
                 </a>
                 <nav className="hidden md:flex items-center">
                     <DropDownMenu />
-                    <ul>
-                        <li>
-                            <a  href="">Section 1</a>
-                        </li>
-                    </ul>
                 </nav>
             </div>
             <button

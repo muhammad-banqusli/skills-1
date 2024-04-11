@@ -5,8 +5,11 @@
 @tailwind utilities;
 
 @layer utilities {
+    .html {
+        scroll-behavior: smooth;
+    }
     .section-min-height {
-        min-height: calc(100vh - 60px);
+        min-height: calc(100dvh - 60px);
     }
     .toggle-btn {
         @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent [&>div]:rotate-[720deg];
@@ -31,17 +34,16 @@
 /* scrollbar styles */
 /* width */
 ::-webkit-scrollbar {
-  width: 4px;
-
+    width: 4px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-background-color: #272b42;
+    background-color: #272b42;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #9cfcf8 11.2%, #6e7bfb 91.1%);
-  @apply rounded-xl
+    background: linear-gradient(45deg, #9cfcf8 11.2%, #6e7bfb 91.1%);
+    @apply rounded-xl;
 }

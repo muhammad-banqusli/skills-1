@@ -26,7 +26,7 @@ const InfiniteLoadingImage = forwardRef(
                         src={image.src.medium}
                         alt={image.alt}
                         title={image.alt}
-                        className="sm:hover:rounded-md w-[80vw] sm:w-full"
+                        className="sm:hover:rounded-md w-[80vw] sm:w-full "
                     />
                 </div>
                 <ImageModal ref={modalRef} image={image} />
@@ -34,9 +34,11 @@ const InfiniteLoadingImage = forwardRef(
         );
 
         const content = ref ? (
-            <article ref={ref}>{ImageBody}</article>
+            <article className="z-20" ref={ref}>
+                {ImageBody}
+            </article>
         ) : (
-            <article>{ImageBody}</article>
+            <article className="z-20">{ImageBody}</article>
         );
 
         return content;

@@ -8,7 +8,7 @@ const Hero = () => {
     return (
         <section
             id="hero"
-            className="section-min-height flex items-center justify-center flex-col p-4"
+            className="section-min-height flex items-center justify-center flex-col p-4 scroll-m-10"
         >
             <h1 className="font-titles hello-world text-nowrap p-4">
                 Hello World!
