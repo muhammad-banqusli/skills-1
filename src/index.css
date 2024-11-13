@@ -15,6 +15,10 @@
         @apply [&>div::before]:translate-y-0 [&>div::before]:rotate-45 [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div]:bg-transparent [&>div]:rotate-[720deg];
     }
     .hello-world {
+        font-size: clamp(0.25rem, 6vw, 5rem);
+    }
+
+    .hello-world::before{
         font-size: clamp(1rem, 10vw, 5rem);
     }
 

@@ -3,6 +3,7 @@ import reactLogo from "../assets/react.svg";
 import tsLogo from "../assets/typescript-official-svgrepo-com.svg";
 import tailwindLogo from "../assets/tailwind-svgrepo-com.svg";
 import dndLogo from "../assets/dnd-kit-logo.svg"
+import { AnimatedText } from "../components";
 
 const Hero = () => {
     return (
@@ -10,9 +11,10 @@ const Hero = () => {
             id="hero"
             className="section-min-height flex items-center justify-center flex-col p-4 scroll-m-10"
         >
-            <h1 className="font-titles hello-world text-nowrap p-4">
+            {/* <h1 className="font-titles hello-world text-nowrap p-4">
                 Hello World!
-            </h1>
+            </h1> */}
+            <AnimatedText />
             <div className="flex flex-col md:flex-row-reverse items-center p-4 gap-6">
                 <div className="lg:w-1/4">
                     <img
